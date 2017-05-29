@@ -415,9 +415,9 @@ end
     TSK_TX_TYPE0_CONFIGURATION_READ(DEFAULT_TAG, 12'h64, 4'hF);
     TSK_WAIT_FOR_READ_DATA;
 
-   if (P_READ_DATA[2:0] != 3'd1) begin
+   if (P_READ_DATA[2:0] != 3'd0) begin
         $display("[%t] :    Check CMPS ID - FAILED", $realtime);
-        $display("[%t] : Data Error Mismatch, Parameter Data %x != Read data %x", $realtime, 3'h1, P_READ_DATA);
+        $display("[%t] : Data Error Mismatch, Parameter Data %x != Read data %x", $realtime, 3'h0, P_READ_DATA);
       error_check = 1;
    end else begin
         $display("[%t] :    Check CMPS ID - PASSED", $realtime);
